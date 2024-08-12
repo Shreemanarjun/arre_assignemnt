@@ -30,6 +30,7 @@ class MicWidget extends StatelessWidget {
         child: SvgPicture.asset(
           'assets/svg/add_mic-optimized.svg',
           height: 36,
+          width: 36,
         ),
       ),
     );

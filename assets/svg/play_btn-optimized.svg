@@ -1,0 +1,22 @@
+<svg width="56" height="56" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#a)">
+        <rect x="8" y="4" width="40" height="40" rx="20" fill="url(#b)"/>
+        <path d="M34.192 25.262a1.584 1.584 0 0 0 0-2.524 30.2 30.2 0 0 0-8.346-4.506l-.549-.193a1.744 1.744 0 0 0-2.302 1.406 34.96 34.96 0 0 0 0 9.11 1.744 1.744 0 0 0 2.302 1.407l.55-.193a30.2 30.2 0 0 0 8.345-4.507Z" fill="#fff"/>
+    </g>
+    <defs>
+        <linearGradient id="b" x1="13.556" y1="10.667" x2="40.778" y2="39.556" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#FFA553"/>
+            <stop offset=".478" stop-color="#EE8C34"/>
+            <stop offset="1" stop-color="#EA5434"/>
+        </linearGradient>
+        <filter id="a" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+            <feOffset dy="4"/>
+            <feGaussianBlur stdDeviation="4"/>
+            <feColorMatrix values="0 0 0 0 0.041441 0 0 0 0 0.0435216 0 0 0 0 0.0458333 0 0 0 0.2 0"/>
+            <feBlend in2="BackgroundImageFix" result="effect1_dropShadow_2004_270"/>
+            <feBlend in="SourceGraphic" in2="effect1_dropShadow_2004_270" result="shape"/>
+        </filter>
+    </defs>
+</svg>

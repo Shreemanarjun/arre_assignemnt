@@ -14,19 +14,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
-      itemCount: 100,
+      itemCount: 10,
       separatorBuilder: (context, index) => const Divider().p16(),
       itemBuilder: (context, index) {
         return Consumer(
           builder: (context, ref, child) {
-            return GestureDetector(
+            return InkWell(
               onTap: () {
                 ref.read(isVisiblePod.notifier).update(
-                      (state) => true,
+                      (state) => !state,
                     );
               },
               child: SvgPicture.asset(
-                "assets/svg/card_img.svg",
+                "assets/svg/card_img-optimized.svg",
               ),
             );
           },

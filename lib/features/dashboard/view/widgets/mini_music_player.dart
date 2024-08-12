@@ -1,4 +1,5 @@
 import 'package:arre_assignmemnt/features/dashboard/controller/is_visible_player.dart';
+import 'package:arre_assignmemnt/features/dashboard/view/widgets/music_controllers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -11,7 +12,8 @@ class MiniMusicPlayer extends ConsumerStatefulWidget {
 }
 
 class _MiniMusicPlayerState extends ConsumerState<MiniMusicPlayer> {
-  var defaultHeight = 100.0;
+  var defaultHeight = 72.0;
+  var currentHeight = 72.0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,28 +21,41 @@ class _MiniMusicPlayerState extends ConsumerState<MiniMusicPlayer> {
     return isVisible
         ? Dismissible(
             key: const Key("music"),
-            crossAxisEndOffset: 0,
             direction: DismissDirection.down,
-            onUpdate: (details) {
-              setState(() {
-                defaultHeight = 100 * details.progress;
-              });
-            },
-            onDismissed: (direction) {
+            confirmDismiss: (direction) async {
               ref.read(isVisiblePod.notifier).update(
                     (state) => false,
                   );
+              return true;
+            },
+            onUpdate: (details) {
+              if (details.direction == DismissDirection.down) {
+                if (details.progress == 1.0) {
+                  ref.read(isVisiblePod.notifier).update(
+                        (state) => false,
+                      );
+                }
+                setState(() {
+                  currentHeight = defaultHeight * details.progress;
+                });
+              }
+            },
+            onDismissed: (direction) {
+              ref.read(isVisiblePod.notifier).update((state) => false);
             },
             child: AnimatedContainer(
               duration: const Duration(seconds: 1),
-              height: defaultHeight,
-              decoration: const BoxDecoration(
-                color: Colors.black45,
-                borderRadius: BorderRadius.only(
+              height: currentHeight,
+              decoration: BoxDecoration(
+                color: isVisible
+                    ? Colors.black.withOpacity(0.7)
+                    : Colors.black.withOpacity(0.4),
+                borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
                 ),
               ),
+              child: const MusicControllers(),
             ),
           )
         : const SizedBox.shrink();

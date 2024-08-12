@@ -106,7 +106,7 @@ class _AppState extends ConsumerState<App> with GlobalHelper {
         return Toast(
           navigatorKey: navigatorKey,
           child: child,
-        ).monitorConnection();
+        );
       },
     );
   }
