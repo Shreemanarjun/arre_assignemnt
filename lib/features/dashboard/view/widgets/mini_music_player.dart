@@ -30,14 +30,14 @@ class _MiniMusicPlayerState extends ConsumerState<MiniMusicPlayer> {
             },
             onUpdate: (details) {
               if (details.direction == DismissDirection.down) {
+                setState(() {
+                  currentHeight = defaultHeight * details.progress;
+                });
                 if (details.progress == 1.0) {
                   ref.read(isVisiblePod.notifier).update(
                         (state) => false,
                       );
                 }
-                setState(() {
-                  currentHeight = defaultHeight * details.progress;
-                });
               }
             },
             onDismissed: (direction) {
