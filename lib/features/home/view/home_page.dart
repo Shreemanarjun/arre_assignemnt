@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
             return InkWell(
               onTap: () {
                 ref.read(isVisiblePod.notifier).update(
-                      (state) => !state,
+                      (state) => true,
                     );
               },
               child: SvgPicture.asset(
