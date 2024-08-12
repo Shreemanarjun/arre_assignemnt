@@ -11,7 +11,6 @@ import 'package:arre_assignmemnt/core/theme/theme_controller.dart';
 import 'package:arre_assignmemnt/l10n/l10n.dart';
 import 'package:arre_assignmemnt/shared/helper/global_helper.dart';
 import 'package:arre_assignmemnt/shared/pods/locale_pod.dart';
-import 'package:arre_assignmemnt/shared/widget/no_internet_widget.dart';
 import 'package:arre_assignmemnt/shared/widget/responsive_wrapper.dart';
 
 ///This class holds Material App or Cupertino App
