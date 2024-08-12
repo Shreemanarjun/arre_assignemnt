@@ -1,6 +1,6 @@
 # arre_assignemnt
 
-A new Flutter project.
+An assignment for Arre.
 
 ## Getting Started
 
