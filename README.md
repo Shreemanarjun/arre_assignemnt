@@ -10,4 +10,7 @@ APK link : [APK Releases](https://github.com/Shreemanarjun/arre_assignemnt/relea
 
 ## Screen Recordings
 
-<video src="recordings/Simulator Screen Recording - iPhone 15 - 2024-08-13 at 04.20.28.mp4" width="300" />
+
+
+https://github.com/user-attachments/assets/5daf4b4f-0e17-40b7-90f9-b6691dd5fc41
+
