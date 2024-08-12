@@ -24,7 +24,6 @@ jobs:
       - name: Set up Java
         uses: actions/setup-java@v1
         with:
-          distribution: 'temurin'
           java-version: '17.x'
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
@@ -42,32 +41,15 @@ jobs:
           baseHref: "/"
           aab_generation: true
           apk_generation: true
-      - name: Upload Fat APK
-        uses: actions/upload-artifact@v3
+      - name: Archive APK
+        uses: actions/upload-artifact@v2
         with:
-          name: release-fat-apk
-          path: build/app/outputs/apk/release/app-release.apk
-
-      - name: Upload Split APK
-        uses: actions/upload-artifact@v3
+          name: release-apk
+          path: ${{ steps.build.outputs.apk-path }}
+      - name: Archive AAB
+        uses: actions/upload-artifact@v2
         with:
-          name: release-split-apk
-          path: build/app/outputs/flutter-apk/*.apk
-
-      - id: read-version
-        uses: NiklasLehnfeld/flutter-version-number-action@main
-        with:
-          file-path: pubspec.yaml
-      - name: Push to Releases
-        uses: ncipollo/release-action@v1
-        with:
-          artifacts: "build/app/outputs/apk/release/*.apk, build/app/outputs/flutter-apk/*.apk"
-          tag: v${{ steps.read-version.outputs.version-number }}
-          token: ${{ secrets.TOKEN }}
-          generateReleaseNotes: true
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+          name: release-aab
+          path: ${{ steps.build.outputs.aab-path }}
 
           
