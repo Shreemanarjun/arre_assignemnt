@@ -1,0 +1,2 @@
+Hello arre_assignmemnt!
+Made using riverpod_simple_architecture.
