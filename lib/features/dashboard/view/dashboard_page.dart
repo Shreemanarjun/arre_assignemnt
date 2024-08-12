@@ -1,5 +1,6 @@
 import 'package:arre_assignmemnt/core/router/router.gr.dart';
 import 'package:arre_assignmemnt/features/dashboard/view/widgets/bottom_nav_bar.dart';
+import 'package:arre_assignmemnt/features/dashboard/view/widgets/custom_app_bar.dart';
 import 'package:arre_assignmemnt/features/dashboard/view/widgets/mini_music_player.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +25,7 @@ class DashBoardPage extends StatelessWidget {
         return Scaffold(
           extendBody: true,
           extendBodyBehindAppBar: true,
-          // bottomSheet: BottomNavBar(),
+          appBar: const CustomAppBar(),
           body: Stack(
             fit: StackFit.expand,
             children: [
