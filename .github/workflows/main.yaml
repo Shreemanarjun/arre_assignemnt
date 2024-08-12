@@ -35,8 +35,8 @@ jobs:
         #   flutter-version: '2.x' # any version
       
       # Additional steps as needed
-      - name: Build and deploy Flutter web app
-        uses: antinna/fa@v1
+      - name: flutter-antinna
+        uses: Antinna/fa@v1.0.0
         id: build
         with:
           release: true
