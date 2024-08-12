@@ -22,8 +22,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             SvgPicture.asset("assets/svg/arrevoice.svg"),
             Row(
               children: [
-                SvgPicture.asset("assets/svg/alarm.svg"),
-                SvgPicture.asset("assets/svg/saved.svg"),
+                SvgPicture.asset("assets/svg/alarm.svg").p2(),
+                SvgPicture.asset("assets/svg/saved.svg").p2(),
               ],
             )
           ],
